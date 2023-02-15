@@ -1,0 +1,34 @@
+#bg-canvas {
+    position: inherit;
+}
+
+.showCanvas {
+    position: relative;
+    top: -100%;
+}
+
+.bxT {
+    fill: #ffd655;
+    stroke: #de0000;
+    stroke-linecap:butt;
+    stroke-width: 3px;
+}
+.bxT.inactive {
+    pointer-events: none;
+    fill: #e9d286;
+    stroke: #f67777;
+    stroke-width: 1px;
+}
+
+.bxF {
+    fill: #55d4ff;
+    stroke: #2100de;
+    stroke-linecap: butt;
+    stroke-width: 3px;
+}
+.bxF.inactive {
+    pointer-events: none;
+    fill: #8ce2fe;
+    stroke: #7565d1;
+    stroke-width: 1px;
+}

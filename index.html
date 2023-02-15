@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PaD - EW.Hit</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0" name="viewport">
+        <script src="src/externals/i18n.js"></script>
+        <script src="src/externals/d3_v7_min.js"></script>
+        <script type="module" src="src/js/AAAhelpers.js"></script>
+        <script type="module" src="src/js/PaDhelper.js"></script>
+        <script type="module" src="src/js/PaDconfig.js"></script>
+        <script type="module" src="src/js/PaDcircs.js"></script>
+        <script type="module" src="src/js/PaDnodes.js"></script>
+        <script type="module" src="src/js/PaDlayout.js"></script>
+        <script type="module" src="src/js/PaDinteraction.js"></script>
+        <script type="module" src="src/js/PaDtranslate.js"></script>
+        <script type="module" src="src/js/PaDmain.js"></script>
+        <link rel="stylesheet" type="text/css" href="src/css/PaDstyles.css">
+        <link rel="stylesheet" type="text/css" href="src/css/PaDflags.css">
+        <link rel="stylesheet" type="text/css" href="src/css/PaDsvg-styles.css">
+    </head>
+<body>
+    <div id="container" class="base-color">
+        <div id="bg-layer0">
+            <div id="bg-title" class="base-color"><p>Pascalsches Dreieck</p></div>
+            <div id="bg-layer1">
+                <div id="bg-canvas"></div>
+            </div>
+        </div>
+        <div id="bg-flags" class="flags"></div>
+        <div id="bg-factors" class="border-whiteX">
+            <div class="bg-info base-color">
+            </div>
+        </div>
+        <div id="bg-teiler">
+            <div class="bg-info base-color">
+            </div>
+        </div>
+    </div>
+    <div id="madebyme" class="base-color">
+        <p>&copy; 2023 EW.H it</p>
+    </div>
+    <div id="tooltip">(hier kommt was rein)</div>
+    <script type="module">
+        import { mainExec } from "./src/js/PaDmain.js";
+        mainExec("de");
+    </script>
+</body>
+</html>
