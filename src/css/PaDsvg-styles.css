@@ -7,6 +7,17 @@
     top: -100%;
 }
 
+svg {
+    font-size: 1em;
+    font-family: "Helvetica", Helvetica, Arial, sans-serif, Segoe UI Symbol;
+}
+svg text {
+    fill: white;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    cursor: pointer;
+}
+
 .bxT {
     fill: #ffd655;
     stroke: #de0000;
@@ -18,6 +29,15 @@
     fill: #e9d286;
     stroke: #f67777;
     stroke-width: 1px;
+}
+.bxTt {
+    font-weight: bolder;
+    stroke: #2100de;
+    fill: #2100de;
+}
+.bxTt.inactive {
+    fill: #e9d286;
+    stroke: #e9d286;
 }
 
 .bxF {
@@ -31,4 +51,11 @@
     fill: #8ce2fe;
     stroke: #7565d1;
     stroke-width: 1px;
+}
+
+.bxFt {
+    stroke: #ffffff;
+}
+.bxFt.inactive {
+    stroke: #7565d1;
 }
