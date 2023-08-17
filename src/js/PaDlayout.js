@@ -91,13 +91,15 @@ export function initLayout() {
 
     // Events zuordnen
 
-    m_SVGboxes.init(TestTeiler, "T");                       // Schaltflächen - Events dazu
+    m_SVGboxes.init(TestTeiler, "T", "t");                  // Schaltflächen - Events dazu 
     m_SVGboxes.init(TestFaktor, "F");                       // Schaltflächen - Events dazu
     let but0 = document.getElementById("tt000");            // Button 0 - Event dazu
+    but0.addEventListener('touchstart', function(event) {
+        DoReset(event);
+    });
     but0.addEventListener('click', function(event) {
         DoReset(event);
     });
-
     // Elemente ausblenden
     elemToggler("bg-factors", false);
 
@@ -121,7 +123,10 @@ export function prepLayout() {
     for (const [key, value] of Object.entries(_SVGboxes)) {
         telem = document.getElementById(key);
         if (telem) {
-            telem = document.getElementById(key).firstChild.nextSibling;
+            if (key.startsWith('T'))
+                telem = document.getElementById(key).firstElementChild.nextSibling;
+            else
+                telem = document.getElementById(key).previousElementSibling.firstElementChild;
             telem.innerHTML = i18n(key);
         }
     }

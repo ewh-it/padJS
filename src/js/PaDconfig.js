@@ -43,6 +43,7 @@ const confData = [
     [ "yLd", 80],            // Versatz Y-Achse
     [ "xL", 0],              // Fenstergröße X-Achse
     [ "yL", 0],              // Fenstergröße Y-Achse
+    [ "doTouch", null],     // true: -> Touch-Events setzen
 // aktive Sprache
     [ "actLocale", 'de'],
 ];

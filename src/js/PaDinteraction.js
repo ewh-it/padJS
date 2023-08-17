@@ -49,10 +49,14 @@ export function TestFlag() {
 }
 
 export function TestTeiler(ev) {
+    let _Elem = ev.target;
     let aElem = ev.target.parentNode;
     ev.preventDefault();
     ev.stopPropagation();
-    print(aElem.id, "CLICKed");
+    if (aElem.nodeName != 'g') {
+        aElem = _Elem.previousElementSibling;
+    }
+    // print(aElem.id, ev.type);
     if (aElem.classList.contains("inactive")) {
         return;
     }
@@ -110,23 +114,27 @@ export function TestTeiler(ev) {
     draw();
 }
 function switchFspinner(eID, status) {
-    let fElem = document.getElementById(eID).children[1];
+    let tElem = document.getElementById(eID);
+    let fElem = tElem.previousElementSibling;
+    let fElemC = fElem.children[1];
     if (status == "ON") {
-        if (fElem.classList.contains("inactive")) {
-            fElem.classList.toggle("inactive");
+        if (fElemC.classList.contains("inactive")) {
+            fElemC.classList.toggle("inactive");
         }
+        tElem.textContent = "≺";
     } else {
-        if (!fElem.classList.contains("inactive")) {
-            fElem.classList.toggle("inactive");
+        if (!fElemC.classList.contains("inactive")) {
+            fElemC.classList.toggle("inactive");
         }
+        tElem.textContent = "";
     }
 }
 
 export function TestFaktor(ev) {
-    let aElem = ev.target.parentNode;
+    let aElem = ev.target;
     ev.preventDefault();
     ev.stopPropagation();
-    print(aElem.id, "CLICKed");
+    // print(aElem.id, ev.type);
     if (aElem.classList.contains("inactive")) {
         return;
     }
