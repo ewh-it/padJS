@@ -247,6 +247,7 @@ function draw_DO(ctx, ctxD, ctxT, ctxF, width, height, cDummy, cBounds) {
 function drawPoints(ctx, width, cBounds) {
     let r360 = 2 * Math.PI;
     let oxd = PaDc.GET('oDia');        // Durchmesser
+    let oVx = PaDc.GET('oVx');         // Versatz X
     let oVy = PaDc.GET('oVy');         // Versatz Y
     let obord = PaDc.GET('oBord');     // Rand
 
@@ -257,27 +258,32 @@ function drawPoints(ctx, width, cBounds) {
         ctx.moveTo(ox+0.5, oy);
         ctx.arc( ox, oy, 1, 0, r360 );
     }
-    let ox0 = oxd/2 + obord;
-    let oxw = width - oxd;
+    let ox0 = oVx + oVx/4;
+    let oxw = width - oVx - oVx/4;
     let oyE = cBounds.length*oVy + 3*oVy;
+    // Hintergrund - 3 Abschnitte: Vorlauf / Zeichenbereich / Nachlauf
+
+    // Hintergrund - Vorlauf
     for (let oy=oVy; oy<oVy*4; oy+=oVy) {
-        for (let ox=ox0; ox<oxw; ox+=oxd) {
+        for (let ox=ox0; ox<oxw; ox+=oVx) {
             dcp(ox, oy);
         }
     }
+    // Hintergrund - Zeichenbereich
     for (let icb=0; icb<cBounds.length; icb++) {
         let cb = cBounds[icb];
         let oy = cb[0];
-        if (icb % 10 == 0) {
+        if (icb % 10 == 0) {            // 0. und jede 10. Ebene -> Linie
             ctx.moveTo(ox0, oy);
             ctx.lineTo(oxw, oy);
         }
-        for (let ox=ox0; ox<oxw; ox+=oxd) {
+        for (let ox=ox0; ox<oxw; ox+=oVx) {
             dcp(ox, oy);
         }
     }
+    // Hintergrund - Nachlauf
     for (let oy=oyE+3*oVy; oy>oyE; oy-=oVy) {
-        for (let ox=ox0; ox<oxw; ox+=oxd) {
+        for (let ox=ox0; ox<oxw; ox+=oVx) {
             dcp(ox, oy);
         }
     }

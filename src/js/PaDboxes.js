@@ -14,6 +14,8 @@ import * as PadC from "./PaDconfig.js";
 
 // Schaltflächen für Teiler Rauf&Runter-Zählen - SVG-Elemente zum direkten Einkopieren ins DOM
 
+const actUserAgent = navigator.userAgent;
+
 export class SVGboxes {
 
     constructor () {
@@ -97,20 +99,20 @@ export class SVGboxes {
         let _bx1 = repS(_bM[1], "Tx", "TM");
         let _bx2 = repS(_bM[2], "Tx", "TM");
         return `
-        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 90 84" preserveAspectRatio="xMidYMid meet">
-            <g id="${_bx0}" transform="translate(50,-23)" class="bxT inactive">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="130" viewBox="-12 -6 100 100" preserveAspectRatio="xMidYMid meet">
+            <g id="${_bx0}" class="bxT inactive">
                 <title>-1</title>
-                <path d="M0 88.5 L21.26 80.91 L21.26 50.58 L0 45.08 L0 88.5 Z"/>
+                <path d="m51.5134,19.95734l19.23668,5.41252l-0.04459,40.78574l-19.19209,5.33173l0,-51.52999z"/>
             </g>
             <text id="${_bx0}t" class="bxTt inactive" x="60" y="26" style="display:inline">-1</text>
-            <g id="${_bx1}" transform="translate(24,-14)" class="bxT inactive">
+            <g id="${_bx1}" class="bxT inactive">
                 <title>-10</title>
-                <path d="M0 88.5 L21.6 80.55 L21.6 34.35 L0.23 27.23 L0 88.5 Z"/>
+                <path d="m26.59003,11.618l21.90333,7.15l-0.05077,53.85l-21.85256,7.04l0,-68.04z"/>
             </g>
             <text id="${_bx1}t"class="bxTt inactive" x="35" y="26" style="display:inline">-2</text>
-            <g id="${_bx2}" transform="translate(0,-1)" class="bxT inactive">
+            <g id="${_bx2}" class="bxT inactive">
                 <title>-100</title>
-                <path d="M0 88.5 L20.12 76.54 L20.12 13.09 L0 2.14 L0 88.5 Z"/>
+                <path d="m1,0.5l22.57,9.46743l-0.05232,71.31669l-22.51768,9.32921l0,-90.11334z"/>
             </g>
             <text id="${_bx2}t" class="bxTt inactive" x="10" y="18" style="display:inline">-10</text>
         </svg>
@@ -123,46 +125,52 @@ export class SVGboxes {
         let _bx1 = repS(_bM[1], "Tx", "TP");
         let _bx2 = repS(_bM[2], "Tx", "TP");
         return `
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: block; " width="144" height="120" viewBox="0 0 90 84" preserveAspectRatio="xMidYMid meet">
-            <g id="${_bx0}" transform="translate(34,-23) scale(-1,1)" >
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: block; " width="120" height="130" viewBox="2 12 100 100" preserveAspectRatio="xMidYMid meet">
+            <g id="${_bx0}" class="bxT">
                 <title>-1</title>
-                <path d="M0 88.5 L21.26 80.91 L21.26 50.58 L0 45.08 L0 88.5 Z" class="bxT"/>
+                <path d="m18.8,43.62529l19.92,-5.41796l0,52.36333l-19.97,-5.51031l0.05,-41.43507z"/>
             </g>
-            <text id="${_bx0}t" class="bxTt" x="24" y="26" style="display:inline">+1</text>
-            <g id="${_bx1}" transform="translate(60,-14) scale(-1,1)">
+            <text id="${_bx0}t" class="bxTt" x="28" y="46" style="display:inline">+1</text>
+            <g id="${_bx1}" class="bxT">
                 <title>-10</title>
-                <path d="M0 88.5 L21.6 80.55 L21.6 34.35 L0.23 27.23 L0 88.5 Z" class="bxT"/>
+                <path d="m40.93761,36.89654l21.85256,-7.1952l0,69.54l-21.90333,-7.30763l0.05077,-55.03717z"/>
             </g>
-            <text id="${_bx1}t" class="bxTt" x="50" y="26" style="display:inline">+2</text>
-            <g id="${_bx2}" transform="translate(84,-1) scale(-1,1)" >
+            <text id="${_bx1}t" class="bxTt" x="52" y="46" style="display:inline">+2</text>
+            <g id="${_bx2}" class="bxT">
                 <title>-100</title>
-                <path d="M0 88.5 L20.12 76.54 L20.12 13.09 L0 2.14 L0 88.5 Z" class="bxT"/>
+                <path d="m65.27743,28.2l25.55756,-9.45l0,91.28l-25.62,-9.6l0.06244,-72.23z"/>
             </g>
-            <text id="${_bx2}t" class="bxTt" x="74" y="18" style="display:inline">+10</text>
+            <text id="${_bx2}t" class="bxTt" x="76" y="36" style="display:inline">+10</text>
         </svg>
         `;
     }
 
     getFLboxDOM() {
+        let _ty = '34';
+        if (actUserAgent.includes('Firefox/'))
+            _ty = '43';
         return `
         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="130" viewBox="-20 60 40 30" preserveAspectRatio="xMidYMid meet">
             <g>
                 <title>-1</title>
                 <path d="M0 82.5 L21.26 76.91 L21.26 50.58 L0 45.08 L0 82.5 Z" class="bxF inactive"/>
             </g>
-            <text id="FL-1" x="10" y="34" style="display:inline">≺</text>
+            <text id="FL-1" x="10" y="${_ty}" style="display:inline">≺</text>
         </svg>
         `;
     }
 
     getFRboxDOM() {
+        let _ty = '34';
+        if (actUserAgent.includes('Firefox/'))
+            _ty = '43';
         return `
         <svg xmlns="http://www.w3.org/2000/svg" style="display: block; transform: scale(-1,1)" width="60" height="130" viewBox="-20 64 40 30" preserveAspectRatio="xMidYMid meet">
             <g>
                 <title>-1</title>
                 <path d="M0 82.5 L21.26 76.91 L21.26 50.58 L0 45.08 L0 82.5 Z" class="bxF inactive"/>
             </g>
-            <text id="FR-1" x="10" y="34" style="display:block"></text>
+            <text id="FR-1" x="10" y="${_ty}" style="display:block"></text>
         </svg>
         `;
     }
