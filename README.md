@@ -3,7 +3,7 @@
 
 Pascal'sches Dreieck
 
-* Copyright (C) 2019-2023 ewh-it - EW.H
+* Copyright (C) 2019-2024 ewh-it - EW.H
 
 Pascal'sches Dreieck mit Faktoren-Zerlegung und Mehrsprachigkeit
 
@@ -72,7 +72,7 @@ Das Modul ist ein reines Frontend-Modul im Browser. Der Code ist Vanilla-JavaSri
 <a name="installation"></a>
 ## Installation
 
-1. Laden Sie die [Neueste Version] (https://github.com/ewh-it/PaD-js/releases/latest) herunter.
+1. Laden Sie die [Neueste Version] (https://github.com/ewh-it/padJS/releases/latest) herunter.
 2. Entpacken Sie es in ein Verzeichnis <ihre Wahl> auf dem Webserver.
 
 <a name="upgrade"></a>
@@ -105,3 +105,7 @@ Eine Sprache wird beschrieben durch
 
 Die Lizendefinition kann unter https://www.gnu.org/licenses/agpl-3.0 bzw. https://choosealicense.com/licenses/agpl-3.0/
 eingesehen werden.
+
+i18n ist unter MIT lizensiert.
+
+D3js ist unter ISC lizensiert.
